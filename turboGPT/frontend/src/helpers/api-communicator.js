@@ -4,7 +4,7 @@ import axios from "axios";
  * Axios instance with backend base URL
  */
 const api = axios.create({
-  baseURL: "http://localhost:5555/api/v1",
+  baseURL: import.meta.env.VITE_BACKEND_BASEURL || "http://localhost:5555/api/v1",
   withCredentials: true, // 🔥 REQUIRED for auth
 });
 

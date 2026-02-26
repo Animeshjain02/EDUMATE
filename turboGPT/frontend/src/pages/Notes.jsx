@@ -62,8 +62,9 @@ const Notes = () => {
 
     try {
       setLoading(true);
+      const backendUrl = import.meta.env.VITE_BACKEND_BASEURL || "http://localhost:5555/api/v1";
       const res = await axios.post(
-        "http://localhost:5555/api/v1/notes/upload",
+        `${backendUrl}/notes/upload`,
         formData,
         { withCredentials: true }
       );
