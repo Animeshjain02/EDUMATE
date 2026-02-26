@@ -19,7 +19,7 @@ def get_llm():
         raise RuntimeError("Gemini API key not found in environment variables")
 
     return ChatGoogleGenerativeAI(
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         google_api_key=api_key,
         temperature=0.4,
         max_output_tokens=4096,
