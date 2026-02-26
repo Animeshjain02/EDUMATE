@@ -3,10 +3,7 @@ import { compare, hash } from "bcrypt";
 import { createToken } from "../utils/token-managers.js";
 import { COOKIE_NAME } from "../utils/constants.js";
 
-const domain =
-  process.env.NODE_ENV === "production"
-    ? `.turbogpt-server.onrender.com`
-    : "localhost";
+const domain = process.env.COOKIE_DOMAIN || undefined;
 
 const getAllUsers = async (req, res, next) => {
   try {
