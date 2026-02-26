@@ -13,10 +13,10 @@ from langchain_community.document_loaders import PyPDFLoader
 
 
 def get_llm():
-    api_key = "AIzaSyAWifrSxMPvpdDF4SIMdIlTqCsMqB3d2YU"
+    api_key = os.environ.get("GOOGLE_API_KEY")
 
     if not api_key:
-        raise RuntimeError("Gemini API key not found")
+        raise RuntimeError("Gemini API key not found in environment variables")
 
     return ChatGoogleGenerativeAI(
         model="gemini-2.0-flash",
